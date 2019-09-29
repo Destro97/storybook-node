@@ -1,0 +1,32 @@
+{
+  "name": "storybook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Destro97/storybook-node.git"
+  },
+  "author": "Destro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Destro97/storybook-node/issues"
+  },
+  "homepage": "https://github.com/Destro97/storybook-node#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.7.1",
+    "nodemon": "^1.19.3",
+    "passport": "^0.4.0",
+    "passport-google-oauth20": "^2.0.0"
+  }
+}
