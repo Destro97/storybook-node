@@ -4,12 +4,14 @@ const passport = require('passport');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const flash = require('connect-flash');
+const exphbs = require('express-handlebars');
 
 // Passport Config
 require('./config/passport')(passport);
 
 // Load Routes
 const auth = require('./routes/auth');
+const index = require('./routes/index');
 
 // Require Mongoose connection URI
 const mongoUri = require('./config/keys').mongoUri;
@@ -23,6 +25,12 @@ const conn = mongoose.connect(mongoUri, {
 
 // Initialise Express
 const app = express();
+
+// Handelebars Template Engine Middleware
+app.engine('handlebars', exphbs({
+  defaultLayout: 'main'
+}));
+app.set('view engine', 'handlebars');
 
 // Cookie Parser Middleware
 app.use(cookieParser());
@@ -51,6 +59,7 @@ app.use((req, res, next) => {
 
 // Use Routes
 app.use('/auth', auth);
+app.use('/', index);
 
 const port = 5000;
 
